@@ -19,3 +19,30 @@
 
 - Once you've added your db config as listed above, go to the src folder from your terminal and execute `npx sequalize db:create`
 
+## DB Design
+  - Airplane Table
+    - id
+    - model_number
+    - created_at
+    - updated_at
+  - Flight Table
+    - id
+    - source_airpor_id
+    - destination_airport_id
+    - departure_date
+    - arrival_date
+    - departure_time
+    - arrival_time
+  - Airport
+    - id
+    - name
+    - city_id
+    - address
+  - City
+    - id
+    - name
+
+- A flight belongs to an airplane but one airplane can be used in multiple flights
+- A City has many airports but one airport belongs to a city
+- One airport can have many flights, but flight belongs to one airport.
+
