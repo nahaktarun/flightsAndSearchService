@@ -33,11 +33,18 @@ class CityRepository {
   }
 
   async updateCity(cityId, data) {
-    const city = await City.update(data, {
-      where: {
-        id: cityId,
-      },
-    });
+
+    try{
+
+        const city = await City.update(data, {
+            where: {
+              id: cityId,
+            },
+          });
+    }catch(error){
+        console.log("Something went wrong in the repository layer");
+        throw {error};
+    }
   }
 }
 
