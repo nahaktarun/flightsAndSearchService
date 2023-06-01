@@ -23,6 +23,7 @@ const create = async (req, res) => {
 
 const destory = async (req, res) => {
   try {
+
     const response = await cityService.deleteCity(req.params.id);
     return res.status(200).json({
       data: response,
