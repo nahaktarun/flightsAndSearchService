@@ -45,11 +45,11 @@ const destory = async (req, res) => {
 const update = async (req, res) => {
   try {
 
-    const response = await cityService.updateCiy(req.params.id,req.body);
+    const response = await cityService.updateCity(req.params.id,req.body);
     return res.status(200).json({
       data: response,
       success: true,
-      message: "Successfully fetched a city",
+      message: "Successfully updated a city",
       err: {},
     });
 
