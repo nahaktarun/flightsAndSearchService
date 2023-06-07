@@ -28,3 +28,6 @@
 - One airport can have many flights, but flight belongs to one airport.
 
 ![DB Design](./docs/Db%20design%20flight.jpg "DB design")
+
+
+## API calls
