@@ -26,6 +26,8 @@ const setupAndStartServer = async () =>{
         // repo.createCity({name: "Hyderabad"});
         // const airports = await Airport.findAll({include: City});
         // console.log(airports);
+
+        // TODO: do the model sync to get all the data using methods.
         
     })
 }
