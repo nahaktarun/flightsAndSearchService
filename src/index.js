@@ -28,6 +28,7 @@ const setupAndStartServer = async () =>{
         // console.log(airports);
 
         // TODO: do the model sync to get all the data using methods.
+        // TODO: Many to many association
         
     })
 }
