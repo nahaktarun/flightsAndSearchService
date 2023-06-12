@@ -1,5 +1,5 @@
 const { City } = require("../models/index");
-const {Op} = require('sequelize') ;
+const { Op } = require("sequelize");
 class CityRepository {
   async createCity({ name }) {
     try {
@@ -10,7 +10,7 @@ class CityRepository {
     }
   }
 
-  async deleteCity(cityId ) {
+  async deleteCity(cityId) {
     try {
       await City.destroy({
         where: {
@@ -35,26 +35,25 @@ class CityRepository {
   }
 
   async updateCity(cityId, data) {
-
-    try{
+    try {
       const city = await City.findByPk(cityId);
       city.name = data.name;
       await city.save();
       return city;
-    }catch(error){
-        console.log("Something went wrong in the repository layer");
-        throw {error};
+    } catch (error) {
+      console.log("Something went wrong in the repository layer");
+      throw { error };
     }
   }
-  async getAllCities(filter){
+  async getAllCities(filter) {
     try {
-      if(filter.name){
+      if (filter.name) {
         const cities = await City.findAll({
           where: {
             name: {
-              [Op.startsWith]: filter.name
-            }
-          }
+              [Op.startsWith]: filter.name,
+            },
+          },
         });
         return cities;
       }
